@@ -105,6 +105,8 @@ public protocol MessagesDataSource: AnyObject {
     func customCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell
 
     func messageBottomLabelAlignment(for message: MessageType) -> LabelAlignment?
+    
+     func accessoryViewSize(for message: MessageType) -> CGSize?
 }
 
 public extension MessagesDataSource {
@@ -134,6 +136,10 @@ public extension MessagesDataSource {
     }
     
     func messageBottomLabelAlignment(for message: MessageType) -> LabelAlignment? {
+        return nil
+    }
+    
+    func accessoryViewSize(for message: MessageType) -> CGSize? {
         return nil
     }
 }

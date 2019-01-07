@@ -206,8 +206,12 @@ open class MessageSizeCalculator: CellSizeCalculator {
 
     public func accessoryViewSize(for message: MessageType) -> CGSize {
         let dataSource = messagesLayout.messagesDataSource
-        let isFromCurrentSender = dataSource.isFromCurrentSender(message: message)
-        return isFromCurrentSender ? outgoingAccessoryViewSize : incomingAccessoryViewSize
+        guard let size = dataSource.accessoryViewSize(for: message) else {
+            let isFromCurrentSender = dataSource.isFromCurrentSender(message: message)
+            return isFromCurrentSender ? outgoingAccessoryViewSize : incomingAccessoryViewSize
+        }
+        
+        return size
     }
 
     public func accessoryViewPadding(for message: MessageType) -> HorizontalEdgeInsets {
