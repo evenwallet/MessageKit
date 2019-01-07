@@ -103,6 +103,8 @@ public protocol MessagesDataSource: AnyObject {
     /// - Note:
     ///   This method will call fatalError() on default. You must override this method if you are using MessageType.custom messages.
     func customCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell
+
+    func messageBottomLabelAlignment(for message: MessageType) -> LabelAlignment?
 }
 
 public extension MessagesDataSource {
