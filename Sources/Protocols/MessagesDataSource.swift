@@ -130,4 +130,8 @@ public extension MessagesDataSource {
     func customCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell {
         fatalError(MessageKitError.customDataUnresolvedCell)
     }
+    
+    func messageBottomLabelAlignment(for message: MessageType) {
+        return nil
+    }
 }
