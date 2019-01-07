@@ -195,7 +195,7 @@ open class MessageSizeCalculator: CellSizeCalculator {
         let dataSource = messagesLayout.messagesDataSource
         let alignment = dataSource.messageBottomLabelAlignment(for: message)
   
-        if alignment != nil {
+        if (alignment != nil) {
             return alignment
         }
 
