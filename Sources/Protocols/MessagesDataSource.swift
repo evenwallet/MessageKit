@@ -131,7 +131,7 @@ public extension MessagesDataSource {
         fatalError(MessageKitError.customDataUnresolvedCell)
     }
     
-    func messageBottomLabelAlignment(for message: MessageType) {
+    func messageBottomLabelAlignment(for message: MessageType) -> LabelAlignment {
         return nil
     }
 }
