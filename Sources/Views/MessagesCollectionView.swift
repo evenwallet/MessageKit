@@ -63,6 +63,7 @@ open class MessagesCollectionView: UICollectionView {
     
     private func registerReusableViews() {
         register(TextMessageCell.self)
+        register(TextMessageNoAvatarCell.self)
         register(MediaMessageCell.self)
         register(LocationMessageCell.self)
         register(MessageReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
