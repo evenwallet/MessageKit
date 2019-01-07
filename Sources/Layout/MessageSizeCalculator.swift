@@ -193,14 +193,13 @@ open class MessageSizeCalculator: CellSizeCalculator {
 
     open func messageBottomLabelAlignment(for message: MessageType) -> LabelAlignment {
         let dataSource = messagesLayout.messagesDataSource
-        let alignment = dataSource.messageBottomLabelAlignment(for: message)
-  
-        if (alignment != nil) {
-            return alignment
+        
+        guard let alignment = dataSource.messageBottomLabelAlignment(for: message) else {
+            let isFromCurrentSender = dataSource.isFromCurrentSender(message: message)
+            return isFromCurrentSender ? outgoingMessageBottomLabelAlignment : incomingMessageBottomLabelAlignment
         }
-
-        let isFromCurrentSender = dataSource.isFromCurrentSender(message: message)
-        return isFromCurrentSender ? outgoingMessageBottomLabelAlignment : incomingMessageBottomLabelAlignment
+  
+        return alignment
     }
 
     // MARK: - Accessory View
