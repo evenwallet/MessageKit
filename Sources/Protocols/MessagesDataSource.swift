@@ -132,6 +132,6 @@ public extension MessagesDataSource {
     }
     
     func messageBottomLabelAlignment(for message: MessageType) -> LabelAlignment {
-        return nil
+        return LabelAlignment(textAlignment: .center, textInsets: UIEdgeInsets.zero)
     }
 }
