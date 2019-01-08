@@ -36,7 +36,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapMessage(in cell: MessageCollectionViewCell)
+    func didTapMessage(in cell: MessageCollectionViewCell, at indexPath: IndexPath)
 
     /// Triggered when a tap occurs in the `AvatarView`.
     ///
@@ -46,7 +46,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapAvatar(in cell: MessageCollectionViewCell)
+    func didTapAvatar(in cell: MessageCollectionViewCell, at indexPath: IndexPath)
 
     /// Triggered when a tap occurs in the cellTopLabel.
     ///
@@ -56,7 +56,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapCellTopLabel(in cell: MessageCollectionViewCell)
+    func didTapCellTopLabel(in cell: MessageCollectionViewCell, at indexPath: IndexPath)
     
     /// Triggered when a tap occurs in the messageTopLabel.
     ///
@@ -66,7 +66,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapMessageTopLabel(in cell: MessageCollectionViewCell)
+    func didTapMessageTopLabel(in cell: MessageCollectionViewCell, at indexPath: IndexPath)
 
     /// Triggered when a tap occurs in the messageBottomLabel.
     ///
@@ -76,7 +76,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapMessageBottomLabel(in cell: MessageCollectionViewCell)
+    func didTapMessageBottomLabel(in cell: MessageCollectionViewCell, at indexPath: IndexPath)
     
     /// Triggered when a tap occurs in the accessoryView.
     ///
@@ -86,21 +86,21 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapAccessoryView(in cell: MessageCollectionViewCell)
+    func didTapAccessoryView(in cell: MessageCollectionViewCell, at indexPath: IndexPath)
 
 }
 
 public extension MessageCellDelegate {
 
-    func didTapMessage(in cell: MessageCollectionViewCell) {}
+    func didTapMessage(in cell: MessageCollectionViewCell, at indexPath: IndexPath) {}
 
-    func didTapAvatar(in cell: MessageCollectionViewCell) {}
+    func didTapAvatar(in cell: MessageCollectionViewCell, at indexPath: IndexPath) {}
 
-    func didTapCellTopLabel(in cell: MessageCollectionViewCell) {}
+    func didTapCellTopLabel(in cell: MessageCollectionViewCell, at indexPath: IndexPath) {}
 
-    func didTapMessageTopLabel(in cell: MessageCollectionViewCell) {}
+    func didTapMessageTopLabel(in cell: MessageCollectionViewCell, at indexPath: IndexPath) {}
 
-    func didTapMessageBottomLabel(in cell: MessageCollectionViewCell) {}
+    func didTapMessageBottomLabel(in cell: MessageCollectionViewCell, at indexPath: IndexPath) {}
     
-    func didTapAccessoryView(in cell: MessageCollectionViewCell) {}
+    func didTapAccessoryView(in cell: MessageCollectionViewCell, at indexPath: IndexPath) {}
 }

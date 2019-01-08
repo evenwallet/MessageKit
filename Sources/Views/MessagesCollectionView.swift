@@ -84,7 +84,7 @@ open class MessagesCollectionView: UICollectionView {
         guard let indexPath = indexPathForItem(at: touchLocation) else { return }
         
         let cell = cellForItem(at: indexPath) as? MessageCollectionViewCell
-        cell?.handleTapGesture(gesture)
+        cell?.handleTapGesture(gesture, at: indexPath)
     }
 
     public func scrollToBottom(animated: Bool = false) {
