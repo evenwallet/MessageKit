@@ -30,6 +30,8 @@ open class MessageContainerView: UIImageView {
 
     private let imageMask = UIImageView()
 
+    open var styled: Bool = false
+
     open var style: MessageStyle = .none {
         didSet {
             applyMessageStyle()
